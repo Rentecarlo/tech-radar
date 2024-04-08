@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Technology Radar",
+    "ring": "trial",
+    "quadrant": "tools",
+    "isNew": "TRUE",
+    "description": "Tech that is discussed in our engineering community, COPs, etc. and warrants further investigation should be added to our radar. This is based on Thoughtworks <a href='https://radar.thoughtworks.com/'>\"build your own radar\"</a>"
+  },
+  {
+    "name": "Temporal",
+    "ring": "adopt",
+    "quadrant": "platforms",
+    "isNew": "TRUE",
+    "description": "We've identified durable execution and asynchronous workflow orchestration as a solution for some of our scalability & reliability issues, and <a href='https://temporal.io/'>Temporal</a> is a platform that provides these capabilities"
+  }
+]
