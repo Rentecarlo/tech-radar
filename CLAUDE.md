@@ -21,6 +21,12 @@ You cannot confirm the render from the terminal — BYOR is a client-side app, s
 
 Say plainly that the render itself is unverified, and ask the user to open the radar link, rather than implying a change is confirmed working.
 
+Every pull request must carry a preview link rendering that branch's `radar.json`. Generate it with `./scripts/radar-preview-url.sh` after pushing — the branch has to be on the remote for BYOR to fetch it — and put it at the top of the PR body, as `.github/pull_request_template.md` asks.
+
+## This repository is public
+
+`tech-radar` is one of only two public repositories in the org; everything else is private. Blip descriptions are therefore world-readable, so keep internal repository names, service names, and architecture detail out of them. Cite that evidence in the PR or in chat instead, where it stays behind org access.
+
 ## Upstream constraints
 
 The ring and quadrant names, the `isNew`-must-be-a-string quirk, and the silent-drop behaviour are all imposed by `thoughtworks/build-your-own-radar` — respectively `src/graphing/config.js` (`getRings`/`getQuadrants`) and `src/util/factory.js` (`plotRadarGraph`). Check that repository's `master` before asserting anything about the format; it changes without notice, and the Hold→Caution rename already caught this repository out once.
