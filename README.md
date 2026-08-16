@@ -49,8 +49,19 @@ The outermost ring was renamed from **Hold** to **Caution** in a recent BYOR rel
 
 To move a technology between rings, edit its existing entry — don't add a second one — and set `status` to `Moved In` or `Moved Out` so the change is visible on the radar itself. Beyond that, git history is the record of what changed and when.
 
+## Preview a change before it's merged
+
+BYOR will render any publicly reachable `radar.json`, including the one on your branch — so a change can be seen on the radar before anyone merges it. Generate the link with:
+
+```sh
+./scripts/radar-preview-url.sh          # current branch
+./scripts/radar-preview-url.sh main     # or any branch, tag, or commit SHA
+```
+
+**Every pull request should include this link**, and the PR template asks for it. Reviewing a radar change by reading a JSON diff tells you the file parsed; it doesn't tell you the blip landed in the right place, or landed at all. Open your own link before requesting a review — a blip with an unrecognised `ring` or `quadrant` is dropped silently, and the preview is the only place that shows up.
+
 ## Contributing
 
 1. Branch off `main` as `feat/NNNN-short-description`, where `NNNN` is the next zero-padded number in sequence.
 2. Commit with a matching subject: `NNNN: short description`.
-3. Raise a pull request so the change gets a second pair of eyes — the radar is a statement about how we build things, so the discussion on the PR matters as much as the entry itself.
+3. Raise a pull request, including the preview link above, so the change gets a second pair of eyes — the radar is a statement about how we build things, so the discussion on the PR matters as much as the entry itself.
